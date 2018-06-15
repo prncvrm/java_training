@@ -1,0 +1,139 @@
+Object Casting::
+	|
+	|--- UpCasting :: assigning child class object to parent class reference
+	|--- DownCasting :: Higher to Lower
+
+	Eg (Upcasting / Downcast)::
+	class SomeClass{
+	Object someMethod(Object obj){
+	return obj;
+	}
+	}
+	SomeClass sc = new SomeClass();
+	String str="abcd";
+	String st = (String)sc.someMethod(str); //Upcasting when str is passed to someMethod(Obj), str is converted 										to upper class, while downcasting is when Object is converted to 											String
+
+Abstract Class & Method:: <<asign 3>>
+
+@@ Abstract classes have other abstract and non  abstract method
+@@ can't create object of an abstract class
+@@ it can have main method as well as constructor but although then also it can't be instantiated(object creation)
+
+eg::
+
+abstract class NumOperation
+	abstract int operation (int, int);
+
+Arithmetic 
+	operation()
+
+Logical
+	operation()
+
+----------Interface----------
+
+@@ abstract class doesn't give 100% abstraction, coz it can have both abstract/non-abstract 	   methods too
+@@ Abstract class doesn't allow multiple inheritance, to resolve this, a new structure 			   implemented, called interface
+@@ interface gives 100% abstract, because all methods in interface are bydefault <<<public			   abstract>>>.
+@@ it is a class like structure
+@@ all the fields/variables in interface are public static final (Constant and shareable)
+@@ in jdk1.8 interface uses method definitation using default or static keyword
+@@ interface also not instantiated, we can only create their reference
+@@ interface can extend multiple interfaces
+@@ class can implement multiple interfaces
+@@ child class has to give all the defination
+eg::
+interface intfname{
+	
+} 
+interface A{
+	
+}
+
+class B implements A{
+	----
+}
+
+class A{
+	
+}
+interface I1{
+	
+}
+interface I2{
+	
+}
+class B extends A implements I1,I2{
+	
+}
+
+	interface ---->>		interface (extends)
+	interface --->>>		class (implements)
+	a class can be parent of abstract class too
+
+eg::
+interface PrintMedia{
+	void publishNews();
+}
+interface SocialMedia{
+	void updateStatus();
+}
+class Internet implements PrintMedia,SocialMedia{
+	public void publishNews(){
+		System.out.println("News are published");
+	}
+	public void updateStatus(){
+		System.out.println("News are updated");
+	}
+}
+class Test{
+	public static void main(String args[]){
+		Internet internet = new Internet();
+		internet.publishNews();
+		internet.updateStatus();
+	}
+}
+
+------variable size argument------
+@@ at max one variable size argument
+@@ should be last param in method
+@@ it can save number of overloads (method overloads)
+@@ internally it is treated as array
+
+## datatype... argname
+
+void showListItems(int... param){
+	for(int i : param)
+		System.out.prinln(i);
+}
+
+
+-------Packages-----------
+
+@@ set of logically interrelated classes and interfaces
+
+import java.io.*;
+import java.io.InputStream;
+import java.awt.*;
+import java.awt.event.*;
+
+@@ to create own package, use package keyword
+@@ package statment must be first statement
+
+<<assgn 7 >>>
+
+-------static import-----
+
+@@ simply adding static keyword in the import statement
+
+import static classname;
+
+eg::
+
+class DemoSqrt{
+	public static void main(String args[]){
+		int x=100;
+		double sq=Math.sqrt(x);
+		System.out.println(sq);
+	}
+}

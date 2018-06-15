@@ -1,0 +1,109 @@
+Java :: (Prasad sir)
+-----------Language Fundamentals-------------
+1) Language
+2) syntax rule/semantic rule
+3) keywords - predefined
+
+# 50 keywords in java.
+		two keywords not in use ::
+			#goto
+			#const
+
+# 3 special constants/literals (apart from 50)::	
+	true
+	false
+	null
+4) Identifiers - user defined
+	can contain letters, digits, &, _ 
+	no embedded blank spaces
+	do not match identifier
+	there is no restriction on length of identifier
+	must not start with digit
+
+	conventions followed by java:
+	i) pascal case eg : KrishnaInstituteOfEngineering
+	ii) Camel Case eg : krishnaInstituteOfEngineering
+
+	ClassName - Pascal
+	method/variable/object- camel
+
+	CONSTANTS - UPPER CASE
+	package - lower case
+
+	eg::
+	Class - ArthematicOperations
+	method - arthematicOperations
+	constant - ARTHEMATICOPERATIONS
+	package - arthematicoperations
+
+#character set of java contains :: letters, digits, all symbols on keyboard
+
+class Hello{
+	public static void main(String args[]){
+		System.out.println("Hello World");
+	}
+}
+# class, public, static, void is keywords
+
+# static, final, volatile, etc is non-access modifiers
+# public, private, protected, default is access modifiers
+
+# after compliation, the number of clases in test.java creates equal number of .class files
+@@ out of all classes, only one class can be public at large
+@@ file name should be same as public class name since it is used publically, it can be accessed outside the package, so name should be same.
+
+
+
+
+variable declaration::
+
+[access/non-access modifier] datatype varname [=value];
+
+method declaration::
+
+[access/non-access modifier] returnType methodName ([arg list]{
+	statements
+};
+
+
+
+//setting path
+set path=%path%;"c:\.....\Java\JDK1.8...\bin"
+
+Datatypes::
+	|
+	|--Primitive (Value Types) (8 in nos)
+	|--Reference (Object Types) 
+
+//wrapper classes ::
+				Wrapper Classes
+int			|	Integer
+byte		|	Byte
+boolean		|	Boolean
+float		|	Float
+long		|	Long
+short		|	Short
+char		|	Char
+double		|	Double
+
+Primitive Type	Default Value	Size
+
+boolean			false		1 bit
+byte			0			1 byte
+char			'\u0000'	2 byte
+int				0			4 byte
+short			0			2 byte
+long			0L			8 byte
+float			0.0f		4 byte
+double			0.0D		8 byte
+
+Statements::
+types:
+	Sequential
+	Selection
+	Iteration
+
+Control Structures::
+	|
+	|--- Selection (Branching Statments)
+	|--- Iterations (Looping Statments)

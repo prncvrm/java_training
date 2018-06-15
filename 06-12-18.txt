@@ -1,0 +1,118 @@
+oops
+......
+
+2) Object Instantiation
+
+objectName new constructor();
+
+class Sample{
+	.....
+
+}
+
+Sample s1, s2;
+s1=new Sample();
+s2=new Sample();
+
+To access class members::
+objectname.membername[=value];
+s1.someMethod();
+
+Cloning :: = 
+	|
+	|---- Shallow Cloning
+	|---- Deep Cloning
+
+<<<<<<Shallow Cloning::>>>>>>>>>
+	Sample s1,s2,s3;
+	s1=new Sample();
+	s2=new Sample();
+	s3=s2; //shallow cloning ... points/assigns to same heap memory location
+
+Method Overloading::
+	# with it, we can achieve compile time polymorphism/early binding.
+	# can be done by difference in signature
+
+	Signature can differ :
+		- No. of Arguments
+		- Type of Arguments
+		- Sequence of Arguments
+
+	Eg:
+	class Arithmetic{
+		void add(int x, int y){
+			System.out.prinltn(x+y);
+		}
+		void add(float x, float y){
+			System.out.prinltn(x+y);
+		}
+		void add(double x, double y){
+			System.out.prinltn(x+y);	
+		}
+	}
+	class Test{
+		public static void main(String args[]){
+			Arithmetic ob = new Arithmetic();
+			ob.add(2,5);
+			ob.add(2.0f,5.0f);
+			ob.add(2.0d,5.0d);
+		}
+	}
+
+
+local var
+class var
+instance var
+
+class Sample{
+	int x; //instance var
+	static int y; //class var
+}
+
+# consturctor initializes class n instance variable, not local variable
+# <<<<<< static variables can not local, n always defined in class >>>>>>>>>>
+@@ static member is for those, which is common to all objects
+@@ static members can save memory space
+@@ can be used to count number of objects created //assign_1
+@@ static member should be prefered to be called by class name, than object name  
+@@ static method is loaded even before object is created <<sabse phele hoga>>
+@@ static block is defined to initilize static variables <<sabse phele hoga>>  //assign_2
+
+--------inside class----------
+		static 		non static
+static 	direct		object
+non-sta	direct		direct
+
+-------outside class---------
+		static 			non static
+static 	className		object
+non-sta	className		object
+
+s1 = new Sample.method_name(); ///anyonmous object (memory efficient)
+
+
+---Final----
+final keyword is used to create const variables
+
+eg:
+class Circle{
+	final float PI=3.14f;
+	static int rad=100;
+}
+
+//each time a object of final is created, a new copy of final variable is created so, it takes multiple memory, so therefore we make it static as ::
+
+class Circle{
+	static final float PI=3.14f;
+}
+
+sooo
+
+final --- not shareable and not changeable
+static -- changeable and shareable
+final + static -- shareable and not changeable
+
+@@ final class cannot be extended
+	String & all wrapper classes are final classes
+
+	

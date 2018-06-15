@@ -1,0 +1,124 @@
+-----------------Packages:::----------------
+
+# object class is a super class in java.lang package, <<<default loaded by class loader>>>
+# "System" is a class in the java.lang package. "out" is a static member of the System class, and is an instance of java.io.PrintStream. "println" is a method of java.io.PrintStream. This method is overloaded to print message to output destination.
+
+	function--			return--		work--
+	equals()			boolean			compare two objects (if they r pointing to same heap)
+	clone()				object			clone of object(deep cloning)
+	notifyAll()			void			multithreading
+	wait()				void			multithreading
+	notify()			void			multithreading
+	toString()			String			String equivalent of object
+	hashCode()			int				code/id assigned to object
+
+	all method/functions are public
+
+-----------Accesor/Mutator Methods---------
+
+Accessor(Get/Getter) is get values of class methods
+Mutator(Set/Setter) is assign values to class methods
+Accessor							Mutator
+Non Void and non Params				Generally are void & parameterised
+Eg::
+
+class Book{
+	private String title;
+	private int price;
+	public void setTitle(String title){
+		this.title=title;
+	}
+	public String getTitle(){
+		return title;
+	}
+	public void setPrice(int price){
+		this.price=price;
+	}
+	public int getPrice(){
+		return price;
+	}
+}
+
+Eg:
+class Movie{
+	private String title;
+	private double budget;
+	private boolean universal;
+	public void setTitle(String title){
+		this.title=title;
+	}
+	public String getTitle(){
+		return title;
+	}	
+	public void setBudget(double budget){
+		this.budget=budget;
+	}
+	public double getBudget(){
+		return budget;
+	}
+	public void setUniversal(boolean universal){
+		this.universal=universal;
+	}
+	public boolean isUniversal(){ //<<important here>>//
+		return universal;
+	}
+}
+
+<<asgin 01>>
+
+
+Relationship btwn classes::
+	Association == if they(classes) are used togther in an application
+	Containment == if one class is a part of another class (has-a/part-of)
+	Inheritance == using features of one class, another class is created (is-a)
+	Dependency == creation of object of a class depends on another class object too
+
+	Containment----
+	|
+	|-- Aggregation
+	|-- Composition
+
+	Aggregation::
+
+	A class -------> class B
+	@@ weak dependency
+	
+	eg:
+	class A{
+	B obj;
+	}
+	class B{
+	-------
+	}
+
+	composition ::
+
+	@@ strong dependency
+	@@ implemented by using concept inner classes
+
+	eg:
+	class A{
+		class B{
+
+		}
+	}
+
+	@@ inner class file is generated as Employee$Date.class <<< assgn_3>>>
+	@@ to create object of inner class 
+		<< OuterClass.InnerClass obj_name = OuterClass.new InnerClassConstructor()>>
+
+----- inheritance--------
+	|
+	|--- Single Inheritance **  
+	|--- Hierarchical Inheritance **
+	|--- Multilevel Inheritance **
+	|--- Multiple Inheritance *
+	|--- Hybrid Inheritance *
+
+	* Supported by java indirectly
+	** Supported by java directly
+
+# Inheritance supports reuseability and extensibility
+
+	@@@ https://www.tutorialspoint.com/java/images/types_of_inheritance.jpg
+........

@@ -1,0 +1,95 @@
+-----command line arguments---- 
+@@ non interactive input
+
+void (String args[])
+
+eg::
+
+class Test{
+	public static void main(String args[]){
+		String fname,lname;
+		fname=args[0];
+		lname=args[1];
+		System.out.println(fname+" "+lname);
+	}
+}
+
+@@ null pointer is expected when object instantion is not done
+
+------Scanner Class--------
+@@ interactive input
+@@ started with jdk1.3
+@@ accepts input from keyboard/file
+@@ available in java.util
+
+eg::
+
+import java.util.Scanner;
+class Test{
+	public static void main(String args[]){
+	String fname,lname;
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Enter first & last name");
+	fname=sc.next();
+	lname=sc.next();
+	System.out.println(fname+" "+lname);
+	}
+}
+
+@@ standard streams in java::
+	System.in -- represent input
+	System.out -- represent output
+	System.err -- represents monitor
+----array of objects-----
+
+class Employee{
+	int mid;
+	String ename;
+	Employee(){
+	}
+	Employee(int id, String name){
+	eid=id;
+	ename=name;
+	}
+	public void showEmployeeDetails(){
+		System.out.println(eid+" "+ename);
+	}
+}
+class Test2{
+	public static void main(String args[]){
+		Employee emp[]=new Employee[3];
+		emp[0] = new Employee(101,"dfds");
+		emp[1] = new Employee(102,"gfdds");
+		emp[2] = new Employee(103,"dsfs");
+
+		emp[0].showDetails();
+		emp[1].showDetails();
+		emp[2].showDetails();
+
+		/*
+		for(Employee e: emp)
+			e.showDetails();
+		*/
+	}
+}
+
+----enum--------
+
+enum color(red,blue,green)
+
+------ Object Comparsion(equals())----
+class Smple{
+	-----
+}
+Sample s1,s2;
+s1=new Sample();
+s2=s1; // Shallow Cloning
+
+s1.equals(s2); //returns true
+
+-----Deep Cloning ------
+marker interface :: it is an empty interface (no fields/methods), eg :: Serializable, Clonnable, Remote interface
+
+Clonnable -- tag/marker interface
+
+Object clone() throws CloneNotSupportedException
