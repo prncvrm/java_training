@@ -93,3 +93,106 @@ marker interface :: it is an empty interface (no fields/methods), eg :: Serializ
 Clonnable -- tag/marker interface
 
 Object clone() throws CloneNotSupportedException
+
+class Employee{
+	private int eid;
+	private String ename;
+
+	Employee(){}
+	Employee(int eid, String name){
+		this.eid=eid;
+		this.ename=ename;
+	}
+	void showEmployeeDetails(){
+		System.out.println(eid+" "+ename);
+	}
+	public Employee clone()throws CloneNotSupportedException{
+		Employee emp=new Employee(this.eid,this.ename);
+		return emp;
+	}
+}
+class Test{
+	public static void main(String args[]) throws Exception{
+		Employee e1 = new Employee(100,"tom");
+		Employee e2=e1.clone();
+		e1.showEmployeeDetails();
+		e2.showEmployeeDetails();
+	}
+}
+
+---------Switch with String--------
+JDK 1.7 supports switch to take String Expression
+
+switch(exp){
+	------
+}
+
+exp can be of integral & string type but can't be of real type
+
+Example:
+
+import java.util.Scanner;
+
+class Test{
+public static void main(String[] args) {
+	
+String str=new Scanner(System.in).next();
+switch(str){
+	case "A":
+	case "E":
+	case "I":
+	case "O":
+	case "U":
+	System.out.println("Vowel");
+	break;
+	default:
+	System.out.println("Consonants");
+	break;
+}
+}
+}
+---Interface having method defination in jdk 1.8-------------------
+interface I{
+	void m1();
+	default void m2(){}
+	static void m3(){}
+}
+class A implements I{
+	public void m1(){}
+}
+class Test{
+	public static void main(String[] args) {
+		A obj = new A();
+		obj.m1();
+		obj.m2();
+		I.m3(); 
+	} 
+}
+
+--------------Access Modifiers------
+1-Public
+2-Protected
+3-Default
+4-Private
+http://2.bp.blogspot.com/-LTO8bwD3c6o/Tw1GoeAlHeI/AAAAAAAABlE/0EX24ENt9uY/s1600/access%2Bspecifiers.png
+
+---boxing/unboxing---------
+class Test{
+public static void main(String args[]){
+int x = 100;
+Integer newX=new Integer(x); 			//Boxing
+x=newX.intValue();						//Unboxing
+
+int y=100;
+Integer newY=y;							//Autoboxing
+y=newY;									//Autoboxing
+
+System.out.println("x: "+x);
+System.out.println("newX: "+newX);
+System.out.println("y: "+y);
+System.out.println("newY: "+newY);
+}
+}
+
+value-->object === boxing
+object-->value===unboxing

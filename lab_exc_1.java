@@ -1,3 +1,4 @@
+/* Question 1*/
 class MyDate{
 	private int day,month,year;
 	void initDate(){
@@ -7,7 +8,7 @@ class MyDate{
 		System.out.println("Date:"+day+"/"+month+"/"+year);
 	}
 }
-
+/* Question 2*/
 class MyDate{
 	private int day,month,year;
 	public void setDay(int day){
@@ -29,7 +30,7 @@ class MyDate{
 		return year;
 	}
 }
-
+/* Question 3*/
 class MyDate{
 	private int day,month,year;
 	MyDate(){}
@@ -39,12 +40,28 @@ class MyDate{
 		this.year=year;
 	}
 }
+/* Question 4*/
 class Employee{
 	private int id;
 	private String name;
-	private double basicSalary,hra,da,medical,ta=2000.0;
-
+	private double basicSalary,hra,da,medical,ta;
+	Employee(int id,String name,double basicSalary){
+		this.id=id;
+		this.name=name;
+		this.basicSalary=basicSalary;
+		this.hra=(.05*basicSalary);
+		this.da=(0.027*basicSalary);
+		this.medical=(0.015*basicSalary);
+		this.ta=2000.0;
+	}
+	double grossSalary(){
+		return (basicSalary+hra+da+med+ta);
+	}
+	double netSalary(){
+		return (grossSalary()-(.010*grossSalary()))
+	}
 }
+/* Question 5*/
 class MathClass{
 	void add(int x, int y){
 		System.out.prinltn(x+y);
@@ -56,6 +73,16 @@ class MathClass{
 		System.out.prinltn(x+y);	
 	}
 }
+/* Question 6*/
+class MathClass{
+	int add(int...a){
+		int sum=0;
+		for(int i : a)
+			sum+=i;
+	return sum;
+	}
+}
+/* Question 7*/
 class MyDate{
 	private int day,month,year;
 	Date(){
@@ -67,11 +94,35 @@ class MyDate{
 		this.year=year;
 	}
 }
+/* Question 8*/
 class Employee{
-	private int id;
-	private String name;
-	private double basicSalary,hra,da,medical,ta=2000.0;
-
+	static public int id=0;
+	public String name;
+	public double basicSalary,hra,da,medical,ta;
+	Employee(String name,double basicSalary){
+		id++;
+		this.name=name;
+		this.basicSalary=basicSalary;
+		this.hra=(.05*basicSalary);
+		this.da=(0.027*basicSalary);
+		this.medical=(0.015*basicSalary);
+		this.ta=2000.0;
+	}
+	double grossSalary(){
+		return (basicSalary+hra+da+medical+ta);
+	}
+	double netSalary(){
+		return (grossSalary()-(.010*grossSalary()));
+	}
+}
+class Test {
+	public static void main(String[] args) {
+		Employee emp[] = new Employee[2];
+		emp[0]=new Employee("abc",10000);
+		emp[1]=new Employee("cde",20000);
+		System.out.println(emp[0].id+" "+emp[0].name+" "+emp[0].grossSalary()+" "+emp[0].netSalary());
+		System.out.println(emp[1].id+" "+emp[1].name+" "+emp[1].grossSalary()+" "+emp[1].netSalary());
+	}
 }
 /* Question 9*/
 class MyDate{
@@ -89,7 +140,7 @@ class MyDate{
 class TestQue9{
 	public static void main(String[] args) {
 		MyDate ob = new MyDate(5,5,2000);
-		System.out.println(ob.toString());
+		System.out.println(ob);
 	}
 }
 /* Question 10*/
@@ -233,3 +284,46 @@ class Date implements Printable{
 	}
 }
 /*Question 16*/
+class MyDate{
+	private int day,month,year;
+	MyDate(){}
+	MyDate(int day, int month, int year){
+		this.day=day;
+		this.month=month;
+		this.year=year;
+	}
+	public MyDate clone() throws CloneNotSupportedException{
+		MyDate date=new MyDate(this.day,this.month,this.year);
+		return date;
+	}
+}
+/* Question 17*/
+class Account {
+	private int acctId;
+	private int acctType;
+	private String acctHolderName;
+	Account(int acctId, int acctType, String acctHolderName){
+		this.acctId=acctId;
+		this.acctType=acctType;
+		this.acctHolderName=acctHolderName;
+	}
+	class Locker{
+		private int lockerId;
+		Locker(int lockerId){
+			this.lockerId=lockerId;
+		}
+		void printAccountDetails(){
+			System.out.println("Account Numebr = "+acctId);
+			System.out.println("Account Type = "+acctType);
+			System.out.println("Name = "+acctHolderName);
+			System.out.println("Locker Id= "+lockerId);
+		}
+	}	
+}
+class Test{
+	public static void main(String[] args) {
+		Account ac = new Account(12345,2,"ABC");
+		Account.Locker ob = ac.new Locker(54);
+		ob.printAccountDetails();
+	}
+}
